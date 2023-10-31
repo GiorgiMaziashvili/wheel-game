@@ -1,0 +1,23 @@
+<div class="app">
+    <h1>Wheel Game</h1>
+    <div class="app__wheel">
+        <div class="app__wheel-container" #wheelElement></div>
+        <div class="app__wheel-prizes">
+            <div 
+                class="app__wheel-prize"
+                *ngFor="let prize of prizes; let i = index"
+            >
+                <div class="app__wheel-prize-bg" [ngStyle]="{'background':prize.background}" [ngClass]="{'active': activePrizes[i] && activePrizes[i].active}"></div>
+                <span class="app__wheel-prize-text" [ngStyle]="{'color':prize.color}">{{ prize.text || prize.icon }}</span>
+            </div>
+        </div>
+    </div>
+
+    <div class="app__actions">
+        <h4>Predifined buttons (for testing)</h4>
+        <div class="app__group">
+            <button class="app__button" *ngFor="let prize of prizes" (click)="play(prize.id)">{{ prize.text || prize.icon }}</button>
+            <button class="app__button" (click)="play('TestID')">Wrong</button>
+        </div>
+    </div>
+</div>

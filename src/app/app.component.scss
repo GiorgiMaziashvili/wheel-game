@@ -1,0 +1,131 @@
+.app{
+    padding:50px 10px;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap:50px;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    &__wheel{
+        width: 100%;
+        margin:0 auto;
+        max-width:720px;
+        display: flex;
+        align-items: center;
+        gap:20px;
+        @media (max-width:780px){
+            flex-direction: column-reverse;
+        }
+        &-container{
+            width: 100%;
+            max-width:500px;
+            margin:0 auto;
+        }
+        &-prizes{
+            width:200px;
+            @media (max-width:780px){
+                display: grid;
+                width:100%;
+                gap:10px;
+                grid-template-columns: repeat(2,1fr);
+            }
+        }
+        &-prize{
+            width:100%;
+            height:60px;
+            border-radius:10px;
+            border:1px solid #f4a657;
+            background:#141a22;
+            margin-bottom:10px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            position:relative;
+            font-size:14px;
+            font-weight: 500;
+            text-transform: uppercase;
+            &-bg{
+                position:absolute;
+                top:0;
+                opacity:0;
+                left:0;
+                width:100%;
+                height:100%;
+                z-index:0;
+                border-radius:8px;
+            }
+            &-bg.active{
+                animation: prizeAnimation 1s;
+                opacity:1;
+            }
+            &:last-child{
+                margin-bottom:0;
+            }
+            &-text{
+                position: relative;
+                z-index:2;
+            }
+        }
+    }
+    &__group{
+        width: 100%;
+        display:grid;
+        gap:10px;
+        grid-template-columns: repeat(4,1fr);
+        margin-top:20px;
+        @media (max-width:780px){
+            grid-template-columns: repeat(2,1fr);
+        }
+    }
+    &__button{
+        display: block;
+        cursor: pointer;
+        width:100%;
+        padding:12px;
+        background:#141a22;
+        outline: none;
+        border-radius: 6px;
+        border:1px solid #8b8a8a;
+        color:#8b8a8a;
+        transition:0.3s all;
+        &:hover{
+            border:1px solid #18a70c;
+            color:#fff;
+        }
+    }
+    &__actions{
+        width:100%;
+        max-width: 720px;
+    }
+    h1,h4{
+        font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+        color:#fff;
+        text-align: center;
+    }
+}
+
+@keyframes prizeAnimation{
+    0%{
+        opacity:0;
+        box-shadow: 0 0 0px 0 #ffec51;
+    }
+    20%{
+        opacity:1;
+    }
+    40%{
+        opacity:0;
+    }
+    50%{
+        box-shadow: 0 0 30px 0 #ffec51;
+    }
+    60%{
+        opacity: 1;
+    }
+    80%{
+        opacity: 0;
+    }
+    100%{
+        box-shadow: 0 0 0px 0 #ffec51;
+        opacity:1;
+    }
+}
