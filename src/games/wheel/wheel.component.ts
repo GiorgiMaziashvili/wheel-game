@@ -59,10 +59,10 @@ export class WheelComponent implements AfterViewInit, OnDestroy{
   private loadAssets = async () => {
     //shoud be setted from the outside component
     Assets.addBundle('wheel',{
-      border:'../assets/images/games/wheel/border.png',
-      arrow:'../assets/images/games/wheel/wheel-arrow.png',
-      button: '../assets/images/games/wheel/button.png',
-      buttonDisabled: '../assets/images/games/wheel/button-disabled.png',
+      border:'assets/images/games/wheel/border.png',
+      arrow:'assets/images/games/wheel/wheel-arrow.png',
+      button: 'assets/images/games/wheel/button.png',
+      buttonDisabled: 'assets/images/games/wheel/button-disabled.png',
     })
 
     return await Assets.loadBundle('wheel',(loadingPer:number) => {

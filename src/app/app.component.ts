@@ -71,14 +71,15 @@ export class AppComponent extends WheelComponent implements OnInit{
       icon:"",
     },
   ]
-
-  ngOnInit(): void {
-    this.wheelButton.on('click',() => {
-      const index = Math.floor(Math.random() * this.prizes.length);
-      this.play(this.prizes[index].id);
-    })
+  handleSpin() {
+    const index = Math.floor(Math.random() * this.prizes.length);
+    this.play(this.prizes[index].id);
   }
-  
+  ngOnInit(): void {
+    this.wheelButton.on('click',this.handleSpin);
+    this.wheelButton.on('touchstart',this.handleSpin);
+  }
+
   override onComplete(prize: WheelPrizeType,prizeIndex:number): void {
     if(prizeIndex >= 0) this.activePrizes[prizeIndex] = { active: true };
   }
