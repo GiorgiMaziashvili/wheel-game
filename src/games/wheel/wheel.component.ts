@@ -139,7 +139,7 @@ export class WheelComponent implements AfterViewInit, OnDestroy{
     this.wheelButton.cursor ='pointer';
     this.wheelButton.addChild(buttonSprite);
     this.wheel?.stage.addChild(this.wheelButton,wheelButtonText);
-    this.wheelButton.eventMode = 'dynamic';
+    this.wheelButton.eventMode = 'static';
   }
   
   private generateArrow(){

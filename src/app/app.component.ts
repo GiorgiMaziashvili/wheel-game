@@ -71,7 +71,7 @@ export class AppComponent extends WheelComponent implements OnInit{
       icon:"",
     },
   ]
-  handleSpin() {
+  handleSpin = () => {
     const index = Math.floor(Math.random() * this.prizes.length);
     this.play(this.prizes[index].id);
   }
