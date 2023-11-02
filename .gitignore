@@ -59,6 +59,8 @@ baseline.json
 aio/content/examples/.DS_Store
 
 .angular
+package-lock.json
+yarn.lock
 
 ng build --prod --base-href https://giorgimaziashvili.github.io/wheel-game
 npx angular-cli-ghpages --dir=dist/wheel-game
